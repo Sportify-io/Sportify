@@ -16,6 +16,11 @@
 		3DD9DF212FACEEFD00BBA3A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD9DF1F2FACEEFD00BBA3A0 /* LaunchScreen.storyboard */; };
 		3DD9DF2C2FACEEFD00BBA3A0 /* SportifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF2B2FACEEFD00BBA3A0 /* SportifyTests.swift */; };
 		3DD9DF372FACEEFD00BBA3A0 /* SportifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF362FACEEFD00BBA3A0 /* SportifyUITests.swift */; };
+		6DA76E722FACF39A0054F9F8 /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA76E712FACF39A0054F9F8 /* SplashBuilder.swift */; };
+		6DA76E742FACF3A50054F9F8 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA76E732FACF3A50054F9F8 /* SplashPresenter.swift */; };
+		6DA76E762FACF3AC0054F9F8 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA76E752FACF3AC0054F9F8 /* SplashRouter.swift */; };
+		6DA76E792FACF3B50054F9F8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA76E772FACF3B50054F9F8 /* SplashViewController.swift */; };
+		6DA76E7A2FACF3B50054F9F8 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DA76E782FACF3B50054F9F8 /* SplashViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		3DD9DF322FACEEFD00BBA3A0 /* SportifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD9DF362FACEEFD00BBA3A0 /* SportifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITests.swift; sourceTree = "<group>"; };
 		3DD9DF382FACEEFD00BBA3A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DA76E712FACF39A0054F9F8 /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
+		6DA76E732FACF3A50054F9F8 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		6DA76E752FACF3AC0054F9F8 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		6DA76E772FACF3B50054F9F8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		6DA76E782FACF3B50054F9F8 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 		3DD9DF102FACEEFB00BBA3A0 /* Sportify */ = {
 			isa = PBXGroup;
 			children = (
+				6DA76E6B2FACF34B0054F9F8 /* Module */,
 				3DD9DF112FACEEFB00BBA3A0 /* AppDelegate.swift */,
 				3DD9DF132FACEEFB00BBA3A0 /* SceneDelegate.swift */,
 				3DD9DF152FACEEFB00BBA3A0 /* ViewController.swift */,
@@ -129,6 +140,58 @@
 				3DD9DF382FACEEFD00BBA3A0 /* Info.plist */,
 			);
 			path = SportifyUITests;
+			sourceTree = "<group>";
+		};
+		6DA76E6B2FACF34B0054F9F8 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				6DA76E6C2FACF35B0054F9F8 /* Splash */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		6DA76E6C2FACF35B0054F9F8 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				6DA76E702FACF36F0054F9F8 /* Presenter */,
+				6DA76E6F2FACF36E0054F9F8 /* Builder */,
+				6DA76E6D2FACF3650054F9F8 /* View */,
+				6DA76E6E2FACF36D0054F9F8 /* Router */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		6DA76E6D2FACF3650054F9F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6DA76E772FACF3B50054F9F8 /* SplashViewController.swift */,
+				6DA76E782FACF3B50054F9F8 /* SplashViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6DA76E6E2FACF36D0054F9F8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				6DA76E752FACF3AC0054F9F8 /* SplashRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		6DA76E6F2FACF36E0054F9F8 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				6DA76E712FACF39A0054F9F8 /* SplashBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		6DA76E702FACF36F0054F9F8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6DA76E732FACF3A50054F9F8 /* SplashPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +300,7 @@
 				3DD9DF212FACEEFD00BBA3A0 /* LaunchScreen.storyboard in Resources */,
 				3DD9DF1E2FACEEFD00BBA3A0 /* Assets.xcassets in Resources */,
 				3DD9DF192FACEEFB00BBA3A0 /* Main.storyboard in Resources */,
+				6DA76E7A2FACF3B50054F9F8 /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +327,12 @@
 			files = (
 				3DD9DF162FACEEFB00BBA3A0 /* ViewController.swift in Sources */,
 				3DD9DF1C2FACEEFB00BBA3A0 /* Sportify.xcdatamodeld in Sources */,
+				6DA76E762FACF3AC0054F9F8 /* SplashRouter.swift in Sources */,
 				3DD9DF122FACEEFB00BBA3A0 /* AppDelegate.swift in Sources */,
+				6DA76E722FACF39A0054F9F8 /* SplashBuilder.swift in Sources */,
 				3DD9DF142FACEEFB00BBA3A0 /* SceneDelegate.swift in Sources */,
+				6DA76E742FACF3A50054F9F8 /* SplashPresenter.swift in Sources */,
+				6DA76E792FACF3B50054F9F8 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
