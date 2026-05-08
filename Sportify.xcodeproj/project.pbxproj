@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D09265B2FAE53DC00FC7357 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3D09265A2FAE53DC00FC7357 /* SDWebImage */; };
+		3D09265E2FAE54B300FC7357 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3D09265D2FAE54B300FC7357 /* Alamofire */; };
 		3DD9DF122FACEEFB00BBA3A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF112FACEEFB00BBA3A0 /* AppDelegate.swift */; };
 		3DD9DF142FACEEFB00BBA3A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF132FACEEFB00BBA3A0 /* SceneDelegate.swift */; };
 		3DD9DF162FACEEFB00BBA3A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF152FACEEFB00BBA3A0 /* ViewController.swift */; };
@@ -68,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D09265B2FAE53DC00FC7357 /* SDWebImage in Frameworks */,
+				3D09265E2FAE54B300FC7357 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +214,10 @@
 			dependencies = (
 			);
 			name = Sportify;
+			packageProductDependencies = (
+				3D09265A2FAE53DC00FC7357 /* SDWebImage */,
+				3D09265D2FAE54B300FC7357 /* Alamofire */,
+			);
 			productName = Sportify;
 			productReference = 3DD9DF0E2FACEEFB00BBA3A0 /* Sportify.app */;
 			productType = "com.apple.product-type.application";
@@ -281,6 +289,10 @@
 				Base,
 			);
 			mainGroup = 3DD9DF052FACEEFB00BBA3A0;
+			packageReferences = (
+				3D0926592FAE53DC00FC7357 /* XCRemoteSwiftPackageReference "sdwebimage" */,
+				3D09265C2FAE54B300FC7357 /* XCRemoteSwiftPackageReference "alamofire" */,
+			);
 			productRefGroup = 3DD9DF0F2FACEEFB00BBA3A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -659,6 +671,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D0926592FAE53DC00FC7357 /* XCRemoteSwiftPackageReference "sdwebimage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sdwebimage/sdwebimage";
+			requirement = {
+				kind = exactVersion;
+				version = 5.9.3;
+			};
+		};
+		3D09265C2FAE54B300FC7357 /* XCRemoteSwiftPackageReference "alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alamofire/alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 5.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D09265A2FAE53DC00FC7357 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D0926592FAE53DC00FC7357 /* XCRemoteSwiftPackageReference "sdwebimage" */;
+			productName = SDWebImage;
+		};
+		3D09265D2FAE54B300FC7357 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D09265C2FAE54B300FC7357 /* XCRemoteSwiftPackageReference "alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3DD9DF1A2FACEEFB00BBA3A0 /* Sportify.xcdatamodeld */ = {
