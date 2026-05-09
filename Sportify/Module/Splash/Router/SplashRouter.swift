@@ -12,14 +12,23 @@ protocol SplashRouterProtocol {
 }
 
 class SplashRouter: SplashRouterProtocol {
-    
+
     weak var viewController: UIViewController?
-    
+
     func navigateToHome() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "home")
-        vc.modalPresentationStyle = .fullScreen
-        
-        viewController?.present(vc, animated: true)
+        let destination = resolveDestination()
+        destination.modalPresentationStyle = .fullScreen
+        viewController?.present(destination, animated: true)
+    }
+
+    private func resolveDestination() -> UIViewController {
+        let onboardingDone = UserDefaults.standard.bool(forKey: "onboardingDone")
+
+        if onboardingDone {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            return storyboard.instantiateViewController(withIdentifier: "home")
+        } else {
+            return OnboardingBuilder.build()
+        }
     }
 }

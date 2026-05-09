@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0926452FADED3700FC7357 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0926442FADED3700FC7357 /* OnboardingRouter.swift */; };
+		3D0926482FADED6000FC7357 /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0926472FADED6000FC7357 /* OnboardingBuilder.swift */; };
+		3D09264D2FADEDC500FC7357 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D09264B2FADEDC500FC7357 /* OnboardingViewController.swift */; };
+		3D0926502FADEEE200FC7357 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D09264F2FADEEE200FC7357 /* OnboardingPage.swift */; };
+		3D0926522FADEFE300FC7357 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0926512FADEFE300FC7357 /* PageViewController.swift */; };
+		3D0926582FAE4C9B00FC7357 /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0926572FAE4C9B00FC7357 /* PageViewController.xib */; };
 		3D09265B2FAE53DC00FC7357 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3D09265A2FAE53DC00FC7357 /* SDWebImage */; };
 		3D09265E2FAE54B300FC7357 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3D09265D2FAE54B300FC7357 /* Alamofire */; };
 		3DD9DF122FACEEFB00BBA3A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF112FACEEFB00BBA3A0 /* AppDelegate.swift */; };
@@ -18,6 +24,7 @@
 		3DD9DF212FACEEFD00BBA3A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD9DF1F2FACEEFD00BBA3A0 /* LaunchScreen.storyboard */; };
 		3DD9DF2C2FACEEFD00BBA3A0 /* SportifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF2B2FACEEFD00BBA3A0 /* SportifyTests.swift */; };
 		3DD9DF372FACEEFD00BBA3A0 /* SportifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF362FACEEFD00BBA3A0 /* SportifyUITests.swift */; };
+		3DD9DF482FAD30D200BBA3A0 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF472FAD30D200BBA3A0 /* OnboardingPresenter.swift */; };
 		6DA76E722FACF39A0054F9F8 /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA76E712FACF39A0054F9F8 /* SplashBuilder.swift */; };
 		6DA76E742FACF3A50054F9F8 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA76E732FACF3A50054F9F8 /* SplashPresenter.swift */; };
 		6DA76E762FACF3AC0054F9F8 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA76E752FACF3AC0054F9F8 /* SplashRouter.swift */; };
@@ -43,6 +50,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D0926442FADED3700FC7357 /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
+		3D0926472FADED6000FC7357 /* OnboardingBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
+		3D09264B2FADEDC500FC7357 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		3D09264F2FADEEE200FC7357 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		3D0926512FADEFE300FC7357 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		3D0926572FAE4C9B00FC7357 /* PageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
 		3DD9DF0E2FACEEFB00BBA3A0 /* Sportify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD9DF112FACEEFB00BBA3A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DD9DF132FACEEFB00BBA3A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +71,7 @@
 		3DD9DF322FACEEFD00BBA3A0 /* SportifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD9DF362FACEEFD00BBA3A0 /* SportifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITests.swift; sourceTree = "<group>"; };
 		3DD9DF382FACEEFD00BBA3A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DD9DF472FAD30D200BBA3A0 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		6DA76E712FACF39A0054F9F8 /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
 		6DA76E732FACF3A50054F9F8 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		6DA76E752FACF3AC0054F9F8 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
@@ -92,6 +106,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D0926432FADED1300FC7357 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3D0926442FADED3700FC7357 /* OnboardingRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3D0926462FADED4E00FC7357 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				3D0926472FADED6000FC7357 /* OnboardingBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		3DD9DF052FACEEFB00BBA3A0 = {
 			isa = PBXGroup;
 			children = (
@@ -146,9 +176,40 @@
 			path = SportifyUITests;
 			sourceTree = "<group>";
 		};
+		3DD9DF442FACFE6500BBA3A0 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3D0926462FADED4E00FC7357 /* Builder */,
+				3D0926432FADED1300FC7357 /* Router */,
+				3DD9DF462FACFE7D00BBA3A0 /* View */,
+				3DD9DF452FACFE7700BBA3A0 /* Presenter */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		3DD9DF452FACFE7700BBA3A0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3DD9DF472FAD30D200BBA3A0 /* OnboardingPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3DD9DF462FACFE7D00BBA3A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D09264B2FADEDC500FC7357 /* OnboardingViewController.swift */,
+				3D09264F2FADEEE200FC7357 /* OnboardingPage.swift */,
+				3D0926512FADEFE300FC7357 /* PageViewController.swift */,
+				3D0926572FAE4C9B00FC7357 /* PageViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6DA76E6B2FACF34B0054F9F8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				3DD9DF442FACFE6500BBA3A0 /* Onboarding */,
 				6DA76E6C2FACF35B0054F9F8 /* Splash */,
 			);
 			path = Module;
@@ -311,6 +372,7 @@
 			files = (
 				3DD9DF212FACEEFD00BBA3A0 /* LaunchScreen.storyboard in Resources */,
 				3DD9DF1E2FACEEFD00BBA3A0 /* Assets.xcassets in Resources */,
+				3D0926582FAE4C9B00FC7357 /* PageViewController.xib in Resources */,
 				3DD9DF192FACEEFB00BBA3A0 /* Main.storyboard in Resources */,
 				6DA76E7A2FACF3B50054F9F8 /* SplashViewController.xib in Resources */,
 			);
@@ -337,10 +399,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D09264D2FADEDC500FC7357 /* OnboardingViewController.swift in Sources */,
+				3D0926522FADEFE300FC7357 /* PageViewController.swift in Sources */,
 				3DD9DF162FACEEFB00BBA3A0 /* ViewController.swift in Sources */,
+				3D0926502FADEEE200FC7357 /* OnboardingPage.swift in Sources */,
 				3DD9DF1C2FACEEFB00BBA3A0 /* Sportify.xcdatamodeld in Sources */,
 				6DA76E762FACF3AC0054F9F8 /* SplashRouter.swift in Sources */,
+				3D0926482FADED6000FC7357 /* OnboardingBuilder.swift in Sources */,
+				3DD9DF482FAD30D200BBA3A0 /* OnboardingPresenter.swift in Sources */,
 				3DD9DF122FACEEFB00BBA3A0 /* AppDelegate.swift in Sources */,
+				3D0926452FADED3700FC7357 /* OnboardingRouter.swift in Sources */,
 				6DA76E722FACF39A0054F9F8 /* SplashBuilder.swift in Sources */,
 				3DD9DF142FACEEFB00BBA3A0 /* SceneDelegate.swift in Sources */,
 				6DA76E742FACF3A50054F9F8 /* SplashPresenter.swift in Sources */,
