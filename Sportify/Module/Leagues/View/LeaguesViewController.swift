@@ -13,7 +13,7 @@ class LeaguesViewController: UIViewController {
     private var displayedLeagues: [League] = []
     private var activityIndicator: UIActivityIndicatorView?
     var sportType: APISport!
-
+    private var animatedIndexPaths = Set<IndexPath>()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Leagues"
@@ -95,6 +95,38 @@ extension LeaguesViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         presenter.didSelectLeague(at: indexPath.row)
     }
+    
+    func tableView(
+        _ tableView: UITableView,
+        willDisplay cell: UITableViewCell,
+        forRowAt indexPath: IndexPath
+    ) {
+
+        guard !animatedIndexPaths.contains(indexPath)
+        else { return }
+
+        animatedIndexPaths.insert(indexPath)
+
+        cell.alpha = 0
+
+        cell.transform = CGAffineTransform(
+            translationX: 0,
+            y: 30
+        )
+
+        UIView.animate(
+            withDuration: 0.35,
+            delay: 0.1,
+            usingSpringWithDamping: 0.85,
+            initialSpringVelocity: 0.5,
+            options: [.curveEaseOut, .allowUserInteraction]
+        ) {
+
+            cell.alpha = 1
+            cell.transform = .identity
+        }
+    }
+    
 }
 
 
