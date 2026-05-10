@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +29,7 @@
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5UV-4G-Abj">
                                     <rect key="frame" x="0.0" y="8" width="414" height="200"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" name="AppBackground"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="200" id="WnA-oE-F2h"/>
                                     </constraints>
@@ -40,7 +41,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" name="AppBackground"/>
                             <constraints>
                                 <constraint firstItem="5UV-4G-Abj" firstAttribute="top" secondItem="8DC-BP-ea1" secondAttribute="top" constant="8" id="Pdp-Kf-GCZ"/>
                                 <constraint firstAttribute="trailing" secondItem="5UV-4G-Abj" secondAttribute="trailing" id="b4F-JD-NUJ"/>
@@ -49,6 +50,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" name="AppBackground"/>
                     <constraints>
                         <constraint firstItem="8DC-BP-ea1" firstAttribute="trailing" secondItem="I9q-zC-uxz" secondAttribute="trailing" id="5PK-iu-3WF"/>
                         <constraint firstItem="8DC-BP-ea1" firstAttribute="leading" secondItem="I9q-zC-uxz" secondAttribute="leading" id="K8N-za-5iw"/>
@@ -72,6 +74,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="AppBackground">
+            <color red="0.95294117647058818" green="0.98039215686274506" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

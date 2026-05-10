@@ -25,6 +25,8 @@ class SportsViewController: UIViewController {
         setupCollectionView()
         presenter.viewDidLoad()
         
+        view.backgroundColor = UIColor(named: "AppBackground")
+        
         title = "Sports"
     }
 

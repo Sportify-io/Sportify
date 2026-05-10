@@ -22,10 +22,10 @@ class SportsPresenter: SportsPresenterProtocol {
     var router: SportsRouterProtocol?
 
     private let sports: [SportItem] = [
-        SportItem(name: "Football",   symbolName: "footballIcon",   sport: .football),
-        SportItem(name: "Basketball", symbolName: "basketballIcon", sport: .basketball),
-        SportItem(name: "Tennis",     symbolName: "tennisIcon",     sport: .tennis),
-        SportItem(name: "Cricket",    symbolName: "cricketIcon",    sport: .cricket),
+        SportItem(name: "Football", symbolName: "ball", sport: .football),
+        SportItem(name: "Basketball", symbolName: "basketball", sport: .basketball),
+        SportItem(name: "Tennis", symbolName: "tennis", sport: .tennis),
+        SportItem(name: "Cricket", symbolName: "cricket", sport: .cricket),
     ]
 
     func viewDidLoad() {
