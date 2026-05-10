@@ -30,7 +30,7 @@ class SportsCardCell: UICollectionViewCell {
 
     private let nameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .boldSystemFont(ofSize: 20)
+        lbl.font = .boldSystemFont(ofSize: 20)   
         lbl.textColor = UIColor(named: "TextPrimary") ?? .label
         lbl.textAlignment = .center
         lbl.translatesAutoresizingMaskIntoConstraints = false

@@ -24,19 +24,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DC-BP-ea1">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="313"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore Sports" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6b-Ms-fgQ">
-                                    <rect key="frame" x="14" y="54" width="159" height="27"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="159" id="iO3-CU-x42"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5UV-4G-Abj">
-                                    <rect key="frame" x="0.0" y="97" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="8" width="414" height="200"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="200" id="WnA-oE-F2h"/>
@@ -51,12 +42,10 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="A6b-Ms-fgQ" firstAttribute="top" secondItem="8DC-BP-ea1" secondAttribute="top" constant="54" id="1h6-Dy-GWG"/>
-                                <constraint firstItem="A6b-Ms-fgQ" firstAttribute="leading" secondItem="8DC-BP-ea1" secondAttribute="leading" constant="14" id="VNv-TB-Pkc"/>
+                                <constraint firstItem="5UV-4G-Abj" firstAttribute="top" secondItem="8DC-BP-ea1" secondAttribute="top" constant="8" id="Pdp-Kf-GCZ"/>
                                 <constraint firstAttribute="trailing" secondItem="5UV-4G-Abj" secondAttribute="trailing" id="b4F-JD-NUJ"/>
                                 <constraint firstAttribute="bottom" secondItem="5UV-4G-Abj" secondAttribute="bottom" constant="16" id="oSt-co-SqB"/>
                                 <constraint firstItem="5UV-4G-Abj" firstAttribute="leading" secondItem="8DC-BP-ea1" secondAttribute="leading" id="p62-Kv-ecg"/>
-                                <constraint firstItem="5UV-4G-Abj" firstAttribute="top" secondItem="A6b-Ms-fgQ" secondAttribute="bottom" constant="16" id="xii-KJ-Cwe"/>
                             </constraints>
                         </view>
                     </subviews>

@@ -24,6 +24,8 @@ class SportsViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         presenter.viewDidLoad()
+        
+        title = "Sports"
     }
 
     private func setupCollectionView() {
@@ -92,5 +94,11 @@ extension SportsViewController: UICollectionViewDataSource, UICollectionViewDele
         ) as! SportsCardCell
         cell.configure(with: sports[indexPath.item])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        let selectedSport = sports[indexPath.item].sport
+        presenter.didSelectSport(selectedSport)
     }
 }
