@@ -25,8 +25,7 @@ class SplashRouter: SplashRouterProtocol {
         let onboardingDone = UserDefaults.standard.bool(forKey: "onboardingDone")
 
         if onboardingDone {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            return storyboard.instantiateViewController(withIdentifier: "home")
+            return SportsBuilder.build()
         } else {
             return OnboardingBuilder.build()
         }
