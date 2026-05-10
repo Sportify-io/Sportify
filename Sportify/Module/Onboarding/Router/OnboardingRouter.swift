@@ -14,13 +14,12 @@ protocol OnboardingRouterProtocol {
 class OnboardingRouter: OnboardingRouterProtocol {
 
     weak var viewController: UIViewController?
-
+    
     func navigateToHome() {
         UserDefaults.standard.set(true, forKey: "onboardingDone")
 
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "home")
-        vc.modalPresentationStyle = .fullScreen
-        viewController?.present(vc, animated: true)
+        let destination = SportsBuilder.build()
+        destination.modalPresentationStyle = .fullScreen
+        viewController?.navigationController?.setViewControllers([destination], animated: true)
     }
 }
