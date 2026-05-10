@@ -71,10 +71,29 @@ extension LeaguesViewController: LeaguesViewProtocol {
         }
     }
 
-    func showError(_ message: String) {
+    func showError(
+        _ message: String,
+        onOk: (() -> Void)? = nil
+    ) {
+
         DispatchQueue.main.async { [weak self] in
-            let alert = UIAlertController(title: "Error", message: message, preferredStyle:.alert)
-            alert.addAction(UIAlertAction(title: "OK", style:.default))
+
+            let alert = UIAlertController(
+                title: "Error",
+                message: message,
+                preferredStyle: .alert
+            )
+
+            let okAction = UIAlertAction(
+                title: "Retry",
+                style: .default
+            ) { _ in
+
+                onOk?()
+            }
+
+            alert.addAction(okAction)
+
             self?.present(alert, animated: true)
         }
     }
@@ -92,6 +111,7 @@ extension LeaguesViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("veiw click")
         tableView.deselectRow(at: indexPath, animated: true)
         presenter.didSelectLeague(at: indexPath.row)
     }

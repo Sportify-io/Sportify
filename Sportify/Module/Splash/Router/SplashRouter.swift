@@ -18,7 +18,7 @@ class SplashRouter: SplashRouterProtocol {
     func navigateToHome() {
         let destination = resolveDestination()
         destination.modalPresentationStyle = .fullScreen
-        viewController?.present(destination, animated: true)
+        viewController?.navigationController?.setViewControllers([destination], animated: true)
     }
 
     private func resolveDestination() -> UIViewController {

@@ -46,12 +46,4 @@ class LeagueCell: UITableViewCell {
         leagueImage.setImage(urlString: league.leagueImageURL,type: sport)
         countryImage.setImage(urlString: league.countryImageURL, type: sport)
     }
-    
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
-        UIView.animate(withDuration: 0.1) {
-            self.cardView.transform = highlighted ? CGAffineTransform(scaleX: 0.97, y: 0.97) : .identity
-            self.cardView.alpha = highlighted ? 0.9 : 1.0
-        }
-    }
 }

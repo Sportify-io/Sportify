@@ -26,11 +26,14 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
             switch(result){
             case .success(let response):
                 self.allLeagues = response.result ?? []
+                self.filteredLeagues = self.allLeagues
                 self.view?.showLeagues(self.allLeagues)
                 self.view?.hideLoading()
             case .failure(let error):
                 self.view?.hideLoading()
-                self.view?.showError(error.localizedDescription)
+                self.view?.showError(error.localizedDescription){
+                    self.featchLeagues()
+                }
             }
         }
     }
@@ -54,7 +57,8 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
     }
 
     func didSelectLeague(at index: Int) {
-        guard index < filteredLeagues.count else { return }
+        guard index < filteredLeagues.count else {return }
+        print("presenter click: ",index)
         let league = filteredLeagues[index]
         router?.navigateToLeagueDetails(with: league)
     }
