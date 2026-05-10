@@ -30,7 +30,7 @@ extension UIImageView {
             placeholder = UIImage(named: "tennis")
         }
         
-        guard let urlString,
+        guard let urlString = urlString,
               let url = URL(string: urlString) else {
 
             self.image = placeholder
@@ -42,7 +42,7 @@ extension UIImageView {
             placeholderImage: placeholder
         ) { [weak self] image, error, _, _ in
 
-            guard let self else { return }
+            guard let self = self else { return }
 
             if error != nil || image == nil {
 
