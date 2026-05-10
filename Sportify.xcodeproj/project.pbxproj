@@ -15,6 +15,8 @@
 		3D0926582FAE4C9B00FC7357 /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0926572FAE4C9B00FC7357 /* PageViewController.xib */; };
 		3D09265B2FAE53DC00FC7357 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3D09265A2FAE53DC00FC7357 /* SDWebImage */; };
 		3D09265E2FAE54B300FC7357 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3D09265D2FAE54B300FC7357 /* Alamofire */; };
+		3D7FADFE2FB151FA004DCA03 /* FavoriteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7FADFD2FB151FA004DCA03 /* FavoriteServiceProtocol.swift */; };
+		3D95FD472FB14A5D00E601A4 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95FD462FB14A5D00E601A4 /* FavoriteService.swift */; };
 		3DD9DF122FACEEFB00BBA3A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF112FACEEFB00BBA3A0 /* AppDelegate.swift */; };
 		3DD9DF142FACEEFB00BBA3A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF132FACEEFB00BBA3A0 /* SceneDelegate.swift */; };
 		3DD9DF162FACEEFB00BBA3A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9DF152FACEEFB00BBA3A0 /* ViewController.swift */; };
@@ -91,6 +93,8 @@
 		3D09264F2FADEEE200FC7357 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		3D0926512FADEFE300FC7357 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		3D0926572FAE4C9B00FC7357 /* PageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
+		3D7FADFD2FB151FA004DCA03 /* FavoriteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteServiceProtocol.swift; sourceTree = "<group>"; };
+		3D95FD462FB14A5D00E601A4 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
 		3DD9DF0E2FACEEFB00BBA3A0 /* Sportify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD9DF112FACEEFB00BBA3A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DD9DF132FACEEFB00BBA3A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +194,22 @@
 				3D0926472FADED6000FC7357 /* OnboardingBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		3D95FD442FB1489A00E601A4 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		3D95FD452FB14A3D00E601A4 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				3D95FD462FB14A5D00E601A4 /* FavoriteService.swift */,
+				3D7FADFD2FB151FA004DCA03 /* FavoriteServiceProtocol.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 		3DD9DF052FACEEFB00BBA3A0 = {
@@ -333,6 +353,7 @@
 		6DA76E6B2FACF34B0054F9F8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				3D95FD442FB1489A00E601A4 /* Favorite */,
 				3DE5BAF92FB0FA53002754E2 /* Sports */,
 				6DAC8D1E2FAFEB8B00AEB487 /* Leagues */,
 				3DD9DF442FACFE6500BBA3A0 /* Onboarding */,
@@ -421,6 +442,7 @@
 		6DAC8CFA2FAF688300AEB487 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3D95FD452FB14A3D00E601A4 /* Favorite */,
 				6DAC8D0F2FAF910600AEB487 /* Players */,
 				6DAC8D0E2FAF90D200AEB487 /* Fixtures */,
 				6DAC8D0D2FAF909700AEB487 /* Teams */,
@@ -689,6 +711,7 @@
 				6DAC8D172FAF929B00AEB487 /* FixturesServiceProtocol.swift in Sources */,
 				6DAC8D262FAFEC0800AEB487 /* LeaguesContract.swift in Sources */,
 				6DAC8D012FAF697E00AEB487 /* Player.swift in Sources */,
+				3D95FD472FB14A5D00E601A4 /* FavoriteService.swift in Sources */,
 				6DAC8CF42FAF556E00AEB487 /* APIClient.swift in Sources */,
 				6DAC8D192FAF930800AEB487 /* PlayersServiceProtocol.swift in Sources */,
 				6DAC8CFF2FAF696B00AEB487 /* League.swift in Sources */,
@@ -709,6 +732,7 @@
 				6DAC8CF62FAF587F00AEB487 /* APISport.swift in Sources */,
 				6DAC8D032FAF698800AEB487 /* Event.swift in Sources */,
 				6DAC8D212FAFEBCC00AEB487 /* LeaguesBuilder.swift in Sources */,
+				3D7FADFE2FB151FA004DCA03 /* FavoriteServiceProtocol.swift in Sources */,
 				6DAC8D1D2FAFB7EF00AEB487 /* ReachabilityManager.swift in Sources */,
 				3DE5BB102FB10051002754E2 /* SportsRouter.swift in Sources */,
 				6DAC8D2F2FAFEC5700AEB487 /* LeaguesRouter.swift in Sources */,

@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G918" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FavoriteLeague" representedClassName="FavoriteLeague" syncable="YES" codeGenerationType="class">
+        <attribute name="countryImageUrl" optional="YES" attributeType="String"/>
+        <attribute name="countryName" optional="YES" attributeType="String"/>
+        <attribute name="leagueImageUrl" optional="YES" attributeType="String"/>
+        <attribute name="leagueKey" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="leagueName" optional="YES" attributeType="String"/>
+        <attribute name="sport" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="FavoriteLeague" positionX="-63" positionY="-18" width="128" height="119"/>
+    </elements>
 </model>
