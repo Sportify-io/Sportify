@@ -16,7 +16,6 @@ class SportsRouter: SportsRouterProtocol {
 
     func navigateToLeagues(sport: APISport) {
         let vc = LeaguesBuilder.build(sport: sport)
-        vc.modalPresentationStyle = .fullScreen
-        viewController?.present(vc, animated: true)
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }
