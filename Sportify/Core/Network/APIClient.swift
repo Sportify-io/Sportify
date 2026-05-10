@@ -30,6 +30,11 @@ final class APIClient: APIClientProtocol {
             Result<T, NetworkError>
         ) -> Void
     ) {
+        guard ReachabilityManager.shared.isReachable else {
+
+                completion(.failure(.noInternet))
+                return
+        }
         AF.request(
             endpoint.url,
             method: endpoint.method,
