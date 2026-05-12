@@ -57,10 +57,13 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
     }
 
     func didSelectLeague(at index: Int) {
-        guard index < filteredLeagues.count else {return }
-        print("presenter click: ",index)
+
         let league = filteredLeagues[index]
-        router?.navigateToLeagueDetails(with: league)
+
+        router?.navigateToLeagueDetails(
+            sport: sportType ?? .football,
+            leagueId: league.leagueKey ?? 0
+        )
     }
 
     private func loadDummyData() {

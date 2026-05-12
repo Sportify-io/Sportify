@@ -19,5 +19,5 @@ protocol LeaguesPresenterProtocol:AnyObject{
 }
 
 protocol LeaguesRouterProtocol: AnyObject {
-    func navigateToLeagueDetails(with league: League)
+    func navigateToLeagueDetails(sport: APISport, leagueId: Int)
 }
