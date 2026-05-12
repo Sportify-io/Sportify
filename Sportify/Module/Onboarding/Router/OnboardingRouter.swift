@@ -18,7 +18,7 @@ class OnboardingRouter: OnboardingRouterProtocol {
     func navigateToHome() {
         UserDefaults.standard.set(true, forKey: "onboardingDone")
 
-        let destination = SportsBuilder.build()
+        let destination = AppTabBarController()
         destination.modalPresentationStyle = .fullScreen
         viewController?.navigationController?.setViewControllers([destination], animated: true)
     }

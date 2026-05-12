@@ -9,7 +9,6 @@ protocol FavoriteLeaguePresenterProtocol {
     func viewWillAppear()
     func didSelectLeague(at index: Int)
     func removeLeague(at index: Int)
-    func addDummyLeague()
 }
 
 class FavoritesPresenter: FavoriteLeaguePresenterProtocol {
@@ -40,14 +39,6 @@ class FavoritesPresenter: FavoriteLeaguePresenterProtocol {
         favorites.remove(leagueKey: key)
         leagues.remove(at: index)
         view?.showFavorites(leagues.map(mapToViewModel))
-    }
-
-    func addDummyLeague() {
-        var league = League(leagueKey: 999, leagueName: "Test League", countryName: "Test Country", leagueImageURL: nil, countryImageURL: nil)
-        
-        favorites.save(league: league, sport: .basketball)
-        
-        viewWillAppear()
     }
 
     private func mapToViewModel(_ entity: FavoriteLeague) -> FavoriteLeagueViewModel {

@@ -16,10 +16,6 @@ class FavoriteLeagueViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyLabel: UILabel!
 
-    @IBAction func addTestLeague() {
-        presenter.addDummyLeague()
-    }
-
     var presenter: FavoriteLeaguePresenterProtocol!
     private var leagues: [FavoriteLeagueViewModel] = []  
 

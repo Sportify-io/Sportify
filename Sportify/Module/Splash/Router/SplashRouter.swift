@@ -25,8 +25,7 @@ class SplashRouter: SplashRouterProtocol {
         let onboardingDone = UserDefaults.standard.bool(forKey: "onboardingDone")
 
         if onboardingDone {
-            return SportsBuilder.build()
-            //return FavoritesBuilder.build()
+            return AppTabBarController()
         } else {
             return OnboardingBuilder.build()
         }
