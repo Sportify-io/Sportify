@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,15 +14,15 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LeagueCell" rowHeight="108" id="KGk-i7-Jjw" customClass="LeagueCell" customModule="Sportify" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="393" height="108"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="393" height="108"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0BP-E3-ULj" userLabel="CardView">
-                        <rect key="frame" x="16" y="8" width="361" height="84"/>
+                        <rect key="frame" x="16" y="8" width="361" height="92"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="vah-vp-yF0" userLabel="League Image">
-                                <rect key="frame" x="12" y="12" width="60" height="60"/>
+                                <rect key="frame" x="12" y="16" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="gHs-fE-5aP"/>
                                     <constraint firstAttribute="height" constant="60" id="hJk-Lm-9qR"/>
@@ -62,7 +63,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="chevron">
-                                <rect key="frame" x="333" y="34" width="16" height="16.5"/>
+                                <rect key="frame" x="333" y="38" width="16" height="16.5"/>
                                 <color key="tintColor" systemColor="tertiaryLabelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="ch1"/>
@@ -80,7 +81,6 @@
                             <constraint firstItem="stack-country" firstAttribute="top" secondItem="BKx-7J-rO2" secondAttribute="bottom" constant="4" id="c7"/>
                             <constraint firstAttribute="trailing" secondItem="chevron" secondAttribute="trailing" constant="12" id="c8"/>
                             <constraint firstItem="chevron" firstAttribute="centerY" secondItem="0BP-E3-ULj" secondAttribute="centerY" id="c9"/>
-                            <constraint firstAttribute="height" constant="84" id="oVK-4X-Wdb"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -89,7 +89,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" name="CardSurface"/>
                 <constraints>
                     <constraint firstItem="0BP-E3-ULj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="outer1"/>
                     <constraint firstItem="0BP-E3-ULj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="outer2"/>
@@ -111,6 +111,9 @@
     <resources>
         <image name="ball" width="94" height="94"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <namedColor name="CardSurface">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoriteLeagueViewController" customModule="Sportify" customModuleProvider="target">
+            <connections>
+                <outlet property="emptyLabel" destination="teS-zY-7nH" id="xde-fC-ha3"/>
+                <outlet property="tableView" destination="3la-Ke-ebe" id="BC3-9T-Vq8"/>
+                <outlet property="view" destination="iN0-l3-epB" id="LZQ-ze-eia"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3la-Ke-ebe">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svP-Cl-d97">
+                    <rect key="frame" x="156" y="107" width="171" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Add to fav"/>
+                    <connections>
+                        <action selector="addTestLeague" destination="-1" eventType="touchUpInside" id="9ef-xi-W9V"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teS-zY-7nH">
+                    <rect key="frame" x="24" y="427.5" width="366" height="41"/>
+                    <string key="text">No favorite leagues yet.
+Tap ♡ on any league to save it.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="TextPrimary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="teS-zY-7nH" secondAttribute="trailing" constant="24" id="NwH-Fk-Lh1"/>
+                <constraint firstItem="teS-zY-7nH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="R3p-b5-C0A"/>
+                <constraint firstItem="3la-Ke-ebe" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Szd-8j-Ayu"/>
+                <constraint firstItem="teS-zY-7nH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="W5G-NK-i1D"/>
+                <constraint firstItem="3la-Ke-ebe" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="a27-cG-afX"/>
+                <constraint firstItem="teS-zY-7nH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="i13-gI-ooS"/>
+                <constraint firstItem="3la-Ke-ebe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="m3V-ff-Km7"/>
+                <constraint firstItem="3la-Ke-ebe" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="n7o-Zq-gIA"/>
+            </constraints>
+            <point key="canvasLocation" x="21.739130434782609" y="56.919642857142854"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TextPrimary">
+            <color red="0.098039215686274508" green="0.10980392156862745" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -116,6 +116,11 @@ extension LeaguesViewController: UITableViewDelegate, UITableViewDataSource {
         presenter.didSelectLeague(at: indexPath.row)
     }
     
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100  
+    }
+    
     func tableView(
         _ tableView: UITableView,
         willDisplay cell: UITableViewCell,
