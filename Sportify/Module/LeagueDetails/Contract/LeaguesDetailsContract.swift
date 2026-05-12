@@ -17,6 +17,8 @@ protocol LeagueDetailsViewProtocol: AnyObject {
     func showError(message: String)
 
     func reloadData()
+    
+    func updateFavoriteButton(isFavorite: Bool)
 }
 
 protocol LeagueDetailsPresenterProtocol: AnyObject {
@@ -36,6 +38,10 @@ protocol LeagueDetailsPresenterProtocol: AnyObject {
     func getTeam(at index: Int) -> Team
 
     func didSelectTeam(at index: Int)
+    
+    var isFavorite: Bool { get }
+    
+    func toggleFavorite()
 }
 
 protocol LeagueDetailsRouterProtocol: AnyObject {

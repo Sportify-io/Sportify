@@ -12,13 +12,13 @@ class LeaguesRouter: LeaguesRouterProtocol {
 
     func navigateToLeagueDetails(
         sport: APISport,
-        leagueId: Int
+        league: League
     ) {
 
         let detailsVC =
             LeagueDetailsBuilder.build(
                 sport: sport,
-                leagueId: leagueId
+                league: league
             )
 
         viewController?.navigationController?

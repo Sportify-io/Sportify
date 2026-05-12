@@ -15,14 +15,37 @@ final class LeagueDetailsPresenter:
     var router: LeagueDetailsRouterProtocol?
 
     var sportType: APISport?
-
-    var leagueId: Int?
+    
+    var league: League?
+    
+    private let favoritesService: FavoritesServiceProtocol
 
     private var upcomingEvents: [Event] = []
 
     private var recentEvents: [Event] = []
 
     private var teams: [Team] = []
+    
+    init(favoritesService: FavoritesServiceProtocol = FavoritesService.shared) {
+            self.favoritesService = favoritesService
+    }
+
+    var isFavorite: Bool {
+        guard let id = league?.leagueKey else { return false }
+        return favoritesService.isFavorite(leagueKey: id)
+    }
+
+    func toggleFavorite() {
+        guard let sport  = sportType,
+              let league = league else { return }
+
+        if isFavorite {
+            favoritesService.remove(leagueKey: league.leagueKey ?? 0)
+        } else {
+            favoritesService.save(league: league, sport: sport)
+        }
+        view?.updateFavoriteButton(isFavorite: isFavorite)
+    }
 
     func viewDidLoad() {
 
@@ -59,7 +82,7 @@ final class LeagueDetailsPresenter:
     private func fetchUpcomingEvents() {
 
         guard let sport = sportType,
-              let leagueId = leagueId else {
+              let leagueId = league?.leagueKey else {
             return
         }
 
@@ -109,7 +132,7 @@ final class LeagueDetailsPresenter:
     private func fetchTeams() {
 
         guard let sport = sportType,
-              let leagueId = leagueId else {
+              let leagueId = league?.leagueKey else {
             return
         }
 

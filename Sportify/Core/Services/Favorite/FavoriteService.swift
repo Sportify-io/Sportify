@@ -21,12 +21,12 @@ final class FavoritesService: FavoritesServiceProtocol {
         guard let key = league.leagueKey,
               !isFavorite(leagueKey: key) else { return }
         let entity = FavoriteLeague(context: context)
-        entity.leagueKey       = Int32(key)
-        entity.leagueName      = league.leagueName
-        entity.countryName     = league.countryName
-        entity.leagueImageUrl  = league.leagueImageURL
+        entity.leagueKey = Int32(key)
+        entity.leagueName = league.leagueName
+        entity.countryName = league.countryName
+        entity.leagueImageUrl = league.leagueImageURL
         entity.countryImageUrl = league.countryImageURL
-        entity.sport           = sport.rawValue
+        entity.sport = sport.rawValue
         try? context.save()
     }
 

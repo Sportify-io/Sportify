@@ -62,7 +62,7 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
 
         router?.navigateToLeagueDetails(
             sport: sportType ?? .football,
-            leagueId: league.leagueKey ?? 0
+            league: league
         )
     }
 

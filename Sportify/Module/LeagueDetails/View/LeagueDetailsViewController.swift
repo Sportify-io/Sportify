@@ -6,9 +6,11 @@
 import UIKit
 
 final class LeagueDetailsViewController: UIViewController {
-
+    
+    
     @IBOutlet private weak var collectionView: UICollectionView!
-
+    @IBOutlet private weak var addToFavButton: UIButton!
+    
     private var activityIndicator: UIActivityIndicatorView?
 
     var presenter: LeagueDetailsPresenterProtocol!
@@ -30,6 +32,10 @@ final class LeagueDetailsViewController: UIViewController {
 
         presenter.viewDidLoad()
     }
+    
+    @IBAction func addToFavTapped(_ sender: UIButton) {
+        presenter.toggleFavorite()
+    }
 }
 
 
@@ -40,6 +46,8 @@ private extension LeagueDetailsViewController {
         view.backgroundColor = .systemBackground
 
         title = "League Details"
+        
+        updateFavoriteButton(isFavorite: presenter.isFavorite)
     }
 
     func setupCollectionView() {
@@ -527,5 +535,14 @@ extension LeagueDetailsViewController:
         alert.addAction(action)
 
         present(alert, animated: true)
+    }
+    
+    func updateFavoriteButton(isFavorite: Bool) {
+        let imageName = isFavorite ? "heart.fill" : "heart"
+        addToFavButton.setImage(
+            UIImage(systemName: imageName),
+            for: .normal
+        )
+        addToFavButton.tintColor = isFavorite ? .systemRed : .systemGray
     }
 }

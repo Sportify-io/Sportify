@@ -11,7 +11,7 @@ final class LeagueDetailsBuilder {
 
     static func build(
         sport: APISport,
-        leagueId: Int
+        league: League
     ) -> UIViewController {
 
         let view = LeagueDetailsViewController(
@@ -26,10 +26,10 @@ final class LeagueDetailsBuilder {
         presenter.view = view
         presenter.router = router
         presenter.sportType = sport
-        presenter.leagueId = leagueId
+        //presenter.leagueId = league.leagueKey
+        presenter.league = league
 
         router.viewController = view
-
         view.presenter = presenter
 
         return view

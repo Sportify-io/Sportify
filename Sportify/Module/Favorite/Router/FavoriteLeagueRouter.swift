@@ -24,7 +24,13 @@ class FavoritesRouter: FavoritesRouterProtocol {
             leagueImageURL: favorite.leagueImageUrl,
             countryImageURL: favorite.countryImageUrl
         )
-        /*let vc = LeagueDetailsBuilder.build(league: league, sport: sport)
-        viewController?.navigationController?.pushViewController(vc, animated: true)*/
+
+        let leagueDetailsVC = LeagueDetailsBuilder.build(
+            sport: sport,
+            league: league
+        )
+
+        viewController?.navigationController?
+            .pushViewController(leagueDetailsVC, animated: true)
     }
 }
