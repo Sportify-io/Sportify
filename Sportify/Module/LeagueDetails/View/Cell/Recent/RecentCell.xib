@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="RecentCell" id="gTV-IL-0wX" customClass="RecentCell" customModule="Sportify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="180"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cardView" userLabel="Card View">
+                        <rect key="frame" x="8" y="8" width="264" height="164"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="result" translatesAutoresizingMaskIntoConstraints="NO" id="bgImage">
+                                <rect key="frame" x="0.0" y="0.0" width="264" height="164"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="overlay">
+                                <rect key="frame" x="0.0" y="0.0" width="264" height="164"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mainStack">
+                                        <rect key="frame" x="16" y="41.333333333333336" width="232" height="81.666666666666657"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="homeStack">
+                                                <rect key="frame" x="0.0" y="5" width="72" height="71.333333333333343"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="homeTeamLogo">
+                                                        <rect key="frame" x="11" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="hh"/>
+                                                            <constraint firstAttribute="width" constant="50" id="hw"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arsenal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="homeTeamName">
+                                                        <rect key="frame" x="15.333333333333339" y="57.999999999999993" width="41.666666666666657" height="13.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="scoreStack">
+                                                <rect key="frame" x="80" y="0.0" width="72" height="81.666666666666671"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="scoreNumbers">
+                                                        <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="homeTeamScore">
+                                                                <rect key="frame" x="0.0" y="0.0" width="27.666666666666668" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dashLabel">
+                                                                <rect key="frame" x="33.666666666666657" y="3" width="6" height="24"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="636" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awayTeamScore">
+                                                                <rect key="frame" x="45.666666666666657" y="0.0" width="26.333333333333329" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="matchStatus">
+                                                        <rect key="frame" x="30.333333333333346" y="33.999999999999993" width="11.666666666666668" height="11"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                                        <color key="textColor" white="1" alpha="0.60000000000000009" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Oct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dateLabel">
+                                                        <rect key="frame" x="16" y="48.999999999999993" width="40" height="14.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="timeLabel">
+                                                        <rect key="frame" x="19.666666666666668" y="67.333333333333343" width="32.666666666666657" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="awayStack">
+                                                <rect key="frame" x="160" y="5" width="72" height="71.333333333333343"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="awayTeamLogo">
+                                                        <rect key="frame" x="11" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ah"/>
+                                                            <constraint firstAttribute="width" constant="50" id="aw"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chelsea" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awayTeamName">
+                                                        <rect key="frame" x="14" y="57.999999999999993" width="44" height="13.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.63890933184556564" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="mainStack" firstAttribute="leading" secondItem="overlay" secondAttribute="leading" constant="16" id="m1"/>
+                                    <constraint firstAttribute="trailing" secondItem="mainStack" secondAttribute="trailing" constant="16" id="m2"/>
+                                    <constraint firstItem="mainStack" firstAttribute="centerY" secondItem="overlay" secondAttribute="centerY" id="m3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bgImage" firstAttribute="top" secondItem="cardView" secondAttribute="top" id="bg1"/>
+                            <constraint firstItem="bgImage" firstAttribute="leading" secondItem="cardView" secondAttribute="leading" id="bg2"/>
+                            <constraint firstAttribute="trailing" secondItem="bgImage" secondAttribute="trailing" id="bg3"/>
+                            <constraint firstAttribute="bottom" secondItem="bgImage" secondAttribute="bottom" id="bg4"/>
+                            <constraint firstItem="overlay" firstAttribute="top" secondItem="cardView" secondAttribute="top" id="o1"/>
+                            <constraint firstItem="overlay" firstAttribute="leading" secondItem="cardView" secondAttribute="leading" id="o2"/>
+                            <constraint firstAttribute="trailing" secondItem="overlay" secondAttribute="trailing" id="o3"/>
+                            <constraint firstAttribute="bottom" secondItem="overlay" secondAttribute="bottom" id="o4"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="24"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="cardView" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="c1"/>
+                <constraint firstItem="cardView" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="c2"/>
+                <constraint firstAttribute="trailing" secondItem="cardView" secondAttribute="trailing" constant="8" id="c3"/>
+                <constraint firstAttribute="bottom" secondItem="cardView" secondAttribute="bottom" constant="8" id="c4"/>
+            </constraints>
+            <size key="customSize" width="280" height="180"/>
+            <connections>
+                <outlet property="awayImage" destination="awayTeamLogo" id="Ctw-Ko-0Sh"/>
+                <outlet property="awayName" destination="awayTeamName" id="KKO-jY-x3s"/>
+                <outlet property="awayResult" destination="awayTeamScore" id="ndw-xL-ALH"/>
+                <outlet property="cardView" destination="cardView" id="cardViewOutlet"/>
+                <outlet property="dateLabel" destination="dateLabel" id="dateLabelOutlet"/>
+                <outlet property="homeImage" destination="homeTeamLogo" id="I5i-62-FFo"/>
+                <outlet property="homeName" destination="homeTeamName" id="1K4-co-sVh"/>
+                <outlet property="homeResult" destination="homeTeamScore" id="rMe-hb-cKW"/>
+                <outlet property="timeLable" destination="timeLabel" id="GXm-OE-HHF"/>
+            </connections>
+            <point key="canvasLocation" x="54.961832061068698" y="149.64788732394368"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="result" width="736" height="736"/>
+    </resources>
+</document>

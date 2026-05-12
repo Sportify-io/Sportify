@@ -10,8 +10,21 @@ import UIKit
 class LeaguesRouter: LeaguesRouterProtocol {
     weak var viewController: UIViewController?
 
-    func navigateToLeagueDetails(with league: League) {
-//         let detailsVC = DetailsBuilder.build()
-//         viewController?.navigationController?.pushViewController(detailsVC, animated: true)
+    func navigateToLeagueDetails(
+        sport: APISport,
+        leagueId: Int
+    ) {
+
+        let detailsVC =
+            LeagueDetailsBuilder.build(
+                sport: sport,
+                leagueId: leagueId
+            )
+
+        viewController?.navigationController?
+            .pushViewController(
+                detailsVC,
+                animated: true
+            )
     }
 }
