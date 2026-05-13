@@ -529,24 +529,31 @@ extension LeagueDetailsViewController:
         collectionView.reloadData()
     }
 
-    func showError(message: String) {
+    func showError(
+        _ message: String,
+        onOk: (() -> Void)? = nil
+    ) {
 
-        let alert =
-            UIAlertController(
+        DispatchQueue.main.async { [weak self] in
+
+            let alert = UIAlertController(
                 title: "Error",
                 message: message,
                 preferredStyle: .alert
             )
 
-        let action =
-            UIAlertAction(
-                title: "OK",
+            let okAction = UIAlertAction(
+                title: "Retry",
                 style: .default
-            )
+            ) { _ in
 
-        alert.addAction(action)
+                onOk?()
+            }
 
-        present(alert, animated: true)
+            alert.addAction(okAction)
+
+            self?.present(alert, animated: true)
+        }
     }
     
     func updateFavoriteButton(isFavorite: Bool) {

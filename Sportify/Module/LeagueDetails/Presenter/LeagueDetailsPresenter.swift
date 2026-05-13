@@ -121,9 +121,9 @@ final class LeagueDetailsPresenter:
 
                 case .failure(let error):
 
-                    self.view?.showError(
-                        message: error.localizedDescription
-                    )
+                    self.view?.showError(error.localizedDescription){
+                        self.fetchUpcomingEvents()
+                    }
                 }
             }
         }
@@ -156,9 +156,9 @@ final class LeagueDetailsPresenter:
 
                 case .failure(let error):
 
-                    self.view?.showError(
-                        message: error.localizedDescription
-                    )
+                    self.view?.showError(error.localizedDescription){
+                        self.fetchTeams()
+                    }
                 }
             }
         }
