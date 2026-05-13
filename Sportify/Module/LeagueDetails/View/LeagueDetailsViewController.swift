@@ -9,7 +9,7 @@ final class LeagueDetailsViewController: UIViewController {
     
     
     @IBOutlet private weak var collectionView: UICollectionView!
-    @IBOutlet private weak var addToFavButton: UIButton!
+    private var favoriteBarButton: UIBarButtonItem!
     
     private var activityIndicator: UIActivityIndicatorView?
 
@@ -47,8 +47,20 @@ private extension LeagueDetailsViewController {
 
         title = "League Details"
         
+        favoriteBarButton = UIBarButtonItem(
+                    image: UIImage(systemName: "heart"),
+                    style: .plain,
+                    target: self,
+                    action: #selector(favoriteTapped)
+                )
+                navigationItem.rightBarButtonItem = favoriteBarButton
+        
         updateFavoriteButton(isFavorite: presenter.isFavorite)
     }
+    
+    @objc func favoriteTapped() {
+           presenter.toggleFavorite()
+       }
 
     func setupCollectionView() {
 
@@ -538,11 +550,7 @@ extension LeagueDetailsViewController:
     }
     
     func updateFavoriteButton(isFavorite: Bool) {
-        let imageName = isFavorite ? "heart.fill" : "heart"
-        addToFavButton.setImage(
-            UIImage(systemName: imageName),
-            for: .normal
-        )
-        addToFavButton.tintColor = isFavorite ? .systemRed : .systemGray
-    }
+            favoriteBarButton.image = UIImage(systemName: isFavorite ? "heart.fill" : "heart")
+            favoriteBarButton.tintColor = isFavorite ? .systemRed : nil // nil falls back to nav bar tint
+        }
 }

@@ -18,14 +18,8 @@ final class LeagueDetailsRouter:
     weak var viewController: UIViewController?
 
     func navigateToTeamDetails(with team: Team) {
-
-//        let teamDetailsVC =
-//            TeamDetailsBuilder.build(team: team)
-
-//        viewController?.navigationController?
-//            .pushViewController(
-//                teamDetailsVC,
-//                animated: true
-//            )
+        let teamDetailsVC = TeamDetailsBuilder.build(team: team)
+        viewController?.navigationController?
+        .pushViewController(teamDetailsVC, animated: true)
     }
 }
