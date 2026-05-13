@@ -22,6 +22,7 @@ class FavoriteLeagueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        title = "Favorite"
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,23 +21,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2vF-DQ-85T">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Vq-rP-nYw">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="AppBackground"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="2vF-DQ-85T" secondAttribute="bottom" id="5ZD-gt-oVU"/>
-                <constraint firstItem="2vF-DQ-85T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HfU-xv-c8b"/>
-                <constraint firstItem="2vF-DQ-85T" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="n0W-Dk-WpE"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2vF-DQ-85T" secondAttribute="trailing" id="zLS-tR-e2T"/>
+                <constraint firstAttribute="bottom" secondItem="2vF-DQ-85T" secondAttribute="bottom" id="5ZD-gt-oVU"/>
+                <constraint firstItem="2vF-DQ-85T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HfU-xv-c8b"/>
+                <constraint firstItem="2vF-DQ-85T" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="n0W-Dk-WpE"/>
+                <constraint firstItem="2vF-DQ-85T" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="zLS-tR-e2T"/>
             </constraints>
             <point key="canvasLocation" x="140" y="125"/>
         </view>
