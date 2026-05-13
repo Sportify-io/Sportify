@@ -1,10 +1,3 @@
-//
-//  SportsViewController.swift
-//  Sportify
-//
-//  Created by Tasneem Hakeem on 09/05/2026.
-//
-
 import UIKit
 
 protocol SportsViewProtocol: AnyObject {
@@ -14,7 +7,6 @@ protocol SportsViewProtocol: AnyObject {
 class SportsViewController: UIViewController {
 
     @IBOutlet weak var sportsCollectionView: UICollectionView!
-
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
     var presenter: SportsPresenterProtocol!
@@ -26,7 +18,6 @@ class SportsViewController: UIViewController {
         presenter.viewDidLoad()
         
         view.backgroundColor = UIColor(named: "AppBackground")
-        
         title = "Sports"
     }
 
@@ -34,6 +25,9 @@ class SportsViewController: UIViewController {
         sportsCollectionView.dataSource = self
         sportsCollectionView.delegate = self
         sportsCollectionView.backgroundColor = .clear
+        
+        sportsCollectionView.isScrollEnabled = true
+        
         sportsCollectionView.register(
             SportsCardCell.self,
             forCellWithReuseIdentifier: SportsCardCell.reuseID
@@ -44,52 +38,52 @@ class SportsViewController: UIViewController {
     private func makeGridLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 16
-        let sideInset: CGFloat = 16
+        let sideInset: CGFloat = 20
 
-        let totalHorizontalPadding = (sideInset * 2) + spacing
-        let itemWidth = (UIScreen.main.bounds.width - totalHorizontalPadding) / 2
-
-        let topOffset: CGFloat = 80
-        let bottomInset: CGFloat = 34
-        let availableHeight = UIScreen.main.bounds.height - topOffset - bottomInset
-        let itemHeight = (availableHeight - (spacing * 3)) / 2
+        let totalPadding = (sideInset * 2) + spacing
+        let itemWidth = (UIScreen.main.bounds.width - totalPadding) / 2
+        
+        let itemHeight = itemWidth + 45
 
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumInteritemSpacing = spacing
         layout.minimumLineSpacing = spacing
         layout.sectionInset = UIEdgeInsets(top: spacing, left: sideInset, bottom: spacing, right: sideInset)
+        
         return layout
     }
 }
 
-// mark: - SportsViewProtocol
+// MARK: - SportsViewProtocol
 
 extension SportsViewController: SportsViewProtocol {
     func showSports(_ sports: [SportItem]) {
         self.sports = sports
         sportsCollectionView.reloadData()
 
-        let spacing: CGFloat = 16
-        let layout = sportsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let itemHeight = layout.itemSize.height
-        let rows = ceil(Double(sports.count) / 2.0)
-        let height = (itemHeight * CGFloat(rows)) + (spacing * (CGFloat(rows) + 1))
-        collectionViewHeight.constant = height
-        view.layoutIfNeeded()
+        DispatchQueue.main.async {
+            let rows = ceil(Double(self.sports.count) / 2.0)
+            let layout = self.sportsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+            
+            let totalHeight = (CGFloat(rows) * layout.itemSize.height) +
+                              (CGFloat(max(0, rows - 1)) * layout.minimumLineSpacing) +
+                              layout.sectionInset.top + layout.sectionInset.bottom
+            
+            self.collectionViewHeight.constant = totalHeight
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
-// mark: - UICollectionViewDataSource & Delegate
+// MARK: - UICollectionViewDataSource & Delegate
 
 extension SportsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        sports.count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return sports.count
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: SportsCardCell.reuseID,
             for: indexPath
@@ -98,8 +92,7 @@ extension SportsViewController: UICollectionViewDataSource, UICollectionViewDele
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedSport = sports[indexPath.item].sport
         presenter.didSelectSport(selectedSport)
     }
