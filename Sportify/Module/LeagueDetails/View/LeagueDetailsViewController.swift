@@ -25,11 +25,11 @@ final class LeagueDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupView()
-
+        
         setupCollectionView()
-
+        
         presenter.viewDidLoad()
     }
     
@@ -476,7 +476,7 @@ extension LeagueDetailsViewController {
             Double(indexPath.item) * 0.04
 
         UIView.animate(
-            withDuration: 0.25,
+            withDuration: 0.55,
             delay: sectionDelay + itemDelay,
             usingSpringWithDamping: 0.85,
             initialSpringVelocity: 0.5,

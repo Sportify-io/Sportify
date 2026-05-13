@@ -41,8 +41,15 @@ private extension TeamDetailsViewController {
             forCellReuseIdentifier: "PlayerCell"
         )
         tableView.separatorStyle = .none
+
+        tableView.isScrollEnabled = true
+        tableView.alwaysBounceVertical = true
+
         tableView.rowHeight = 90
-        tableView.isScrollEnabled = false
+        tableView.estimatedRowHeight = 90
+
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
+        tableView.scrollIndicatorInsets = tableView.contentInset
     }
 }
 
