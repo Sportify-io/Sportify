@@ -22,7 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        window?.overrideUserInterfaceStyle = .light
+        // Restore the user's saved theme preference from UserDefaults
+        let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
+        window?.overrideUserInterfaceStyle = isDarkMode ? .dark : .light
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
