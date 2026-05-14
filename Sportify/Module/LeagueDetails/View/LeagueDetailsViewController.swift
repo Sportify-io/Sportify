@@ -563,6 +563,6 @@ extension LeagueDetailsViewController:
     
     func updateFavoriteButton(isFavorite: Bool) {
             favoriteBarButton.image = UIImage(systemName: isFavorite ? "heart.fill" : "heart")
-            favoriteBarButton.tintColor = isFavorite ? .systemRed : nil // nil falls back to nav bar tint
+            favoriteBarButton.tintColor = isFavorite ? .systemRed : nil 
         }
 }

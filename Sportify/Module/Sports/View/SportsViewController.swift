@@ -2,6 +2,7 @@ import UIKit
 
 protocol SportsViewProtocol: AnyObject {
     func showSports(_ sports: [SportItem])
+    func updateTheme(isDark: Bool)
 }
 
 class SportsViewController: UIViewController {
@@ -14,13 +15,37 @@ class SportsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupCollectionView()
+        setupThemeButton()
+        
         presenter.viewDidLoad()
         
         view.backgroundColor = UIColor(named: "AppBackground")
         title = "Sports"
     }
 
+    // MARK: - Theme Button
+    
+    private func setupThemeButton() {
+        
+        let themeButton = UIBarButtonItem(
+            image: UIImage(systemName: traitCollection.userInterfaceStyle == .dark ? "sun.max.fill" : "moon.fill"),
+            style: .plain,
+            target: self,
+            action: #selector(toggleTheme)
+        )
+        
+        navigationItem.rightBarButtonItem = themeButton
+    }
+
+    @objc private func toggleTheme() {
+        // Delegate theme change to the presenter so it persists to UserDefaults
+        presenter.toggleTheme()
+    }
+
+    // MARK: - CollectionView
+    
     private func setupCollectionView() {
         sportsCollectionView.dataSource = self
         sportsCollectionView.delegate = self
@@ -32,11 +57,14 @@ class SportsViewController: UIViewController {
             SportsCardCell.self,
             forCellWithReuseIdentifier: SportsCardCell.reuseID
         )
+        
         sportsCollectionView.collectionViewLayout = makeGridLayout()
     }
 
     private func makeGridLayout() -> UICollectionViewFlowLayout {
+        
         let layout = UICollectionViewFlowLayout()
+        
         let spacing: CGFloat = 16
         let sideInset: CGFloat = 20
 
@@ -48,7 +76,13 @@ class SportsViewController: UIViewController {
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumInteritemSpacing = spacing
         layout.minimumLineSpacing = spacing
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: sideInset, bottom: spacing, right: sideInset)
+        
+        layout.sectionInset = UIEdgeInsets(
+            top: spacing,
+            left: sideInset,
+            bottom: spacing,
+            right: sideInset
+        )
         
         return layout
     }
@@ -57,21 +91,41 @@ class SportsViewController: UIViewController {
 // MARK: - SportsViewProtocol
 
 extension SportsViewController: SportsViewProtocol {
+    
     func showSports(_ sports: [SportItem]) {
+        
         self.sports = sports
         sportsCollectionView.reloadData()
 
         DispatchQueue.main.async {
+            
             let rows = ceil(Double(self.sports.count) / 2.0)
+            
             let layout = self.sportsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
             
-            let totalHeight = (CGFloat(rows) * layout.itemSize.height) +
-                              (CGFloat(max(0, rows - 1)) * layout.minimumLineSpacing) +
-                              layout.sectionInset.top + layout.sectionInset.bottom
+            let totalHeight =
+            (CGFloat(rows) * layout.itemSize.height) +
+            (CGFloat(max(0, rows - 1)) * layout.minimumLineSpacing) +
+            layout.sectionInset.top +
+            layout.sectionInset.bottom
             
             self.collectionViewHeight.constant = totalHeight
+            
             self.view.layoutIfNeeded()
         }
+    }
+    
+    func updateTheme(isDark: Bool) {
+
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+
+            window.overrideUserInterfaceStyle = isDark ? .dark : .light
+        }
+
+        navigationItem.rightBarButtonItem?.image = UIImage(
+            systemName: isDark ? "sun.max.fill" : "moon.fill"
+        )
     }
 }
 
@@ -79,20 +133,32 @@ extension SportsViewController: SportsViewProtocol {
 
 extension SportsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         return sports.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: SportsCardCell.reuseID,
             for: indexPath
         ) as! SportsCardCell
+        
         cell.configure(with: sports[indexPath.item])
+        
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
         let selectedSport = sports[indexPath.item].sport
         presenter.didSelectSport(selectedSport)
     }
