@@ -22,17 +22,17 @@ class OnboardingPresenter: OnboardingPresenterProtocol {
         OnboardingPage(
             title: "Welcome to Sportify",
             description: "Your all-in-one app to discover sports, explore leagues, and stay connected to the games you love.",
-            image: UIImage(named: "onboarding1")
+            image: UIImage(named: "ball")
         ),
         OnboardingPage(
             title: "Follow Leagues & Matches",
             description: "Track leagues, upcoming events, and latest scores with real-time updates and detailed views.",
-            image: UIImage(named: "onboarding1")
+            image: UIImage(named: "basketball")
         ),
         OnboardingPage(
             title: "Your Favorites, Anytime",
             description: "Save your favorite leagues and access them anytime, even when you're offline.",
-            image: UIImage(named: "onboarding1")
+            image: UIImage(named: "tennis")
         ),
     ]
 

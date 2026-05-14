@@ -465,8 +465,8 @@
 		3DE5BAF92FB0FA53002754E2 /* Sports */ = {
 			isa = PBXGroup;
 			children = (
-				3DE5BB112FB10064002754E2 /* Presenter */,
 				3DE5BB0E2FB10001002754E2 /* Router */,
+				3DE5BB112FB10064002754E2 /* Presenter */,
 				3DE5BB0B2FB0FF8C002754E2 /* Builder */,
 				3DE5BB032FB0FBAE002754E2 /* View */,
 			);
