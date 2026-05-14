@@ -14,7 +14,7 @@ protocol LeagueDetailsViewProtocol: AnyObject {
 
     func hideLoading()
 
-    func showError(_ message: String, onOk: (() -> Void)?)
+    func showError(_ message: String, onRetry: (() -> Void)?)
 
     func reloadData()
     

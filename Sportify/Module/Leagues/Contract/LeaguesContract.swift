@@ -9,7 +9,7 @@ protocol LeaguesViewProtocol:AnyObject{
     func showLeagues(_ leagues :[League])
     func showLoading()
     func hideLoading()
-    func showError(_ message: String, onOk: (() -> Void)?)
+    func showError(_ message: String, onRetry: (() -> Void)?)
 }
 
 protocol LeaguesPresenterProtocol:AnyObject{

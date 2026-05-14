@@ -531,27 +531,32 @@ extension LeagueDetailsViewController:
 
     func showError(
         _ message: String,
-        onOk: (() -> Void)? = nil
+        onRetry: (() -> Void)? = nil
     ) {
-
+        
         DispatchQueue.main.async { [weak self] in
-
+            
             let alert = UIAlertController(
                 title: "Error",
                 message: message,
                 preferredStyle: .alert
             )
-
-            let okAction = UIAlertAction(
+            
+            let retryAction = UIAlertAction(
                 title: "Retry",
                 style: .default
             ) { _ in
-
-                onOk?()
+                onRetry?()
             }
-
-            alert.addAction(okAction)
-
+            
+            let cancelAction = UIAlertAction(
+                title: "Cancel",
+                style: .cancel
+            )
+            
+            alert.addAction(retryAction)
+            alert.addAction(cancelAction)
+            
             self?.present(alert, animated: true)
         }
     }

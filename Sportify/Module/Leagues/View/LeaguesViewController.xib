@@ -36,7 +36,6 @@
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" name="AppBackground"/>
             <constraints>
                 <constraint firstItem="p5r-Qv-JaB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7Hg-MK-Huu"/>
                 <constraint firstItem="54c-SP-BeM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="118" id="kaS-hr-4kc"/>
