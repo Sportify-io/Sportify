@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct League: Decodable {
+struct League: Decodable, Equatable {
 
     let leagueKey: Int?
     let leagueName: String?
