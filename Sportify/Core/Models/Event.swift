@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Event: Codable {
+struct Event: Codable, Equatable {
     let eventDate: String?
     let eventTime: String?
     
