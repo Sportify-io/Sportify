@@ -26,19 +26,16 @@ final class LeaguesServiceTests: XCTestCase {
     }
 
     func test_getLeagues_callsLeaguesEndpointWithCorrectSport() {
-        // Given
         let expectedResponse = BaseResponse<[League]>(success: 1, result: [])
         mockAPIClient.result = Result<BaseResponse<[League]>, NetworkError>.success(expectedResponse)
         let expectation = expectation(description: "Wait")
 
-        // When
         sut.getLeagues(sport:.football) { _ in
             expectation.fulfill()
         }
 
         waitForExpectations(timeout: 1)
 
-        // Then
         XCTAssertEqual(mockAPIClient.calledCount, 1)
 
         guard let endpoint = mockAPIClient.capturedEndpoint else {
@@ -52,8 +49,7 @@ final class LeaguesServiceTests: XCTestCase {
         }
     }
 
-    func test_getLeagues_whenAPISucceeds_returnsLeagues() {
-        // Given
+    func test_getLeagues_whenAPISucceeds_returnsLeagues(){
         let leagues = [
             League(
                 leagueKey: 302,
@@ -67,9 +63,7 @@ final class LeaguesServiceTests: XCTestCase {
         mockAPIClient.result = Result<BaseResponse<[League]>, NetworkError>.success(response)
         let expectation = expectation(description: "Wait")
 
-        // When
         sut.getLeagues(sport:.football) { result in
-            // Then
             switch result {
             case.success(let data):
                 XCTAssertEqual(data.success, 1)
@@ -85,7 +79,6 @@ final class LeaguesServiceTests: XCTestCase {
     }
 
     func test_getLeagues_whenResultIsEmpty_returnsEmptyArray() {
-        // Given
         let response = BaseResponse<[League]>(success: 1, result: [])
         mockAPIClient.result = Result<BaseResponse<[League]>, NetworkError>.success(response)
         let expectation = expectation(description: "Wait")
@@ -104,13 +97,10 @@ final class LeaguesServiceTests: XCTestCase {
     }
 
     func test_getLeagues_whenAPIFails_returnsError() {
-        // Given
         mockAPIClient.result = Result<BaseResponse<[League]>, NetworkError>.failure(.noInternet)
         let expectation = expectation(description: "Wait")
 
-        // When
         sut.getLeagues(sport:.football) { result in
-            // Then
             switch result {
             case.success:
                 XCTFail("Expected failure")
