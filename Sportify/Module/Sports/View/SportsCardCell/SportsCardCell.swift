@@ -8,7 +8,8 @@ class SportsCardCell: UICollectionViewCell {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.layer.cornerRadius = 18
+        iv.layer.cornerRadius = 16
+        iv.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         iv.backgroundColor = .systemGray6
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
@@ -16,9 +17,9 @@ class SportsCardCell: UICollectionViewCell {
     
     private let nameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .systemFont(ofSize: 15, weight: .medium)
+        lbl.font = .systemFont(ofSize: 20, weight: .bold)
         lbl.textColor = .label
-        lbl.textAlignment = .center
+        lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -35,27 +36,36 @@ class SportsCardCell: UICollectionViewCell {
 
     private func setupUI() {
         contentView.backgroundColor = .secondarySystemGroupedBackground
-        contentView.layer.cornerRadius = 20
+        contentView.layer.cornerRadius = 24
+        contentView.clipsToBounds = true
+        
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
         
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.03
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowRadius = 4
+        layer.shadowOpacity = 0.06
+        layer.shadowOffset = CGSize(width: 0, height: 6)
+        layer.shadowRadius = 12
         layer.masksToBounds = false
         
         contentView.addSubview(sportImageView)
         contentView.addSubview(nameLabel)
 
         NSLayoutConstraint.activate([
-            sportImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            sportImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            sportImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            sportImageView.heightAnchor.constraint(equalTo: sportImageView.widthAnchor),
-
-            nameLabel.topAnchor.constraint(equalTo: sportImageView.bottomAnchor, constant: 10),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
-            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
+            // Image takes up the top section of the card
+            sportImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            sportImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            sportImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            
+            // FIX: Lock image height to exactly 70% of the entire cell height
+            sportImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.70),
+            
+            // Text takes up the bottom 30% safely
+            nameLabel.topAnchor.constraint(equalTo: sportImageView.bottomAnchor, constant: 12),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            nameLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -12)
         ])
     }
 
