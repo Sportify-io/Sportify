@@ -1,21 +1,26 @@
-//
-//  TeamDetailsViewController.swift
-//  Sportify
-//
-//  Created by Tasneem Hakeem on 13/05/2026.
-//
-
 import UIKit
 import SDWebImage
 
+// 1. Create a custom TableView class that expands automatically to match its content height
+final class SelfSizingTableView: UITableView {
+    override var contentSize: CGSize {
+        didSet {
+            invalidateIntrinsicContentSize()
+        }
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        layoutIfNeeded()
+        return CGSize(width: UIView.noIntrinsicMetric, height: contentSize.height)
+    }
+}
+
 final class TeamDetailsViewController: UIViewController {
     @IBOutlet weak var teamName: UILabel!
-    
     @IBOutlet private weak var logoImageView: UIImageView!
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView! // Tied to SelfSizingTableView in XIB
 
     private var activityIndicator: UIActivityIndicatorView?
-
     var presenter: TeamDetailsPresenterProtocol!
 
     override func viewDidLoad() {
@@ -42,14 +47,12 @@ private extension TeamDetailsViewController {
         )
         tableView.separatorStyle = .none
 
-        tableView.isScrollEnabled = true
-        tableView.alwaysBounceVertical = true
+        // FIX: FORCE TableView scrolling to be false so the parent ScrollView handles everything
+        tableView.isScrollEnabled = false
+        tableView.alwaysBounceVertical = false
 
-        tableView.rowHeight = 90
-        tableView.estimatedRowHeight = 90
-
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
-        tableView.scrollIndicatorInsets = tableView.contentInset
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 220
     }
 }
 
@@ -73,14 +76,12 @@ extension TeamDetailsViewController: TeamDetailsViewProtocol {
 
     func reloadData() {
         tableView.reloadData()
+        // Tells UIKit to update the layout bounds now that new rows are rendered
+        tableView.invalidateIntrinsicContentSize()
     }
 
     func showError(message: String) {
-        let alert = UIAlertController(
-            title: "Error",
-            message: message,
-            preferredStyle: .alert
-        )
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
@@ -97,21 +98,14 @@ extension TeamDetailsViewController: TeamDetailsViewProtocol {
     }
 }
 
-// MARK: – UITableViewDataSource & Delegate
-extension TeamDetailsViewController:
-    UITableViewDataSource, UITableViewDelegate {
+// MARK: - UITableViewDataSource & Delegate
+extension TeamDetailsViewController: UITableViewDataSource, UITableViewDelegate {
 
-    func tableView(
-        _ tableView: UITableView,
-        numberOfRowsInSection section: Int
-    ) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.playersCount
     }
 
-    func tableView(
-        _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: "PlayerCell",
             for: indexPath
