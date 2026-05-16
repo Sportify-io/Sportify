@@ -1,13 +1,8 @@
-//
-//  PlayerCell.swift
-//  Sportify
-//
 
 import UIKit
 
 class PlayerCell: UITableViewCell {
 
-    // MARK: - Outlets
 
     @IBOutlet private weak var cardContainerView: UIView!
     @IBOutlet private weak var playerImageView: UIImageView!
@@ -27,8 +22,6 @@ class PlayerCell: UITableViewCell {
     @IBOutlet private weak var yellowCardLabel: UILabel!
     @IBOutlet private weak var redCardLabel: UILabel!
 
-    // MARK: - Lifecycle
-
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -40,7 +33,6 @@ class PlayerCell: UITableViewCell {
         setupStatRows()
     }
 
-    // MARK: - Appearance setup
 
     private func setupCard() {
         cardContainerView.layer.cornerRadius = 16
@@ -70,13 +62,10 @@ class PlayerCell: UITableViewCell {
     }
 
     private func setupStatRows() {
-        // Alternating subtle tint for readability
         ratingPillView.backgroundColor    = UIColor.systemGreen.withAlphaComponent(0.06)
         yellowCardPillView.backgroundColor = UIColor.clear
         redCardPillView.backgroundColor    = UIColor.systemRed.withAlphaComponent(0.05)
     }
-
-    // MARK: - Configure
 
     func configure(with player: Player) {
         configureHeader(player)
@@ -85,10 +74,8 @@ class PlayerCell: UITableViewCell {
     }
 
     private func configureHeader(_ player: Player) {
-        // Name
         playerNameLabel.text = player.playerName ?? "Unknown"
 
-        // Position · Age
         let rawType = player.playerType?.isEmpty == false ? player.playerType! : ""
         let singularType = rawType.hasSuffix("s") ? String(rawType.dropLast()) : rawType
         if let age = player.playerAge, !age.isEmpty {
@@ -97,7 +84,6 @@ class PlayerCell: UITableViewCell {
             positionAgeLabel.text = singularType.isEmpty ? nil : singularType
         }
 
-        // Country
         if let country = player.playerCountry, !country.isEmpty {
             countryLabel.isHidden = false
             countryLabel.text = "🌍  \(country)"
@@ -105,7 +91,6 @@ class PlayerCell: UITableViewCell {
             countryLabel.isHidden = true
         }
 
-        // Jersey number
         if let num = player.playerNumber, !num.isEmpty {
             numberLabel.text = "#\(num)"
         } else {
@@ -114,7 +99,6 @@ class PlayerCell: UITableViewCell {
     }
 
     private func configureStats(_ player: Player) {
-        // Rating
         if let ratingStr = player.playerRating,
            !ratingStr.isEmpty,
            let ratingVal = Double(ratingStr) {
@@ -124,7 +108,6 @@ class PlayerCell: UITableViewCell {
             ratingLabel.text = "–"
         }
 
-        // Cards — always show even if 0
         yellowCardLabel.text = player.playerYellowCards ?? "0"
         redCardLabel.text    = player.playerRedCards    ?? "0"
     }
@@ -142,16 +125,12 @@ class PlayerCell: UITableViewCell {
         }
     }
 
-    // MARK: - Reuse
-
     override func prepareForReuse() {
         super.prepareForReuse()
         playerImageView.image = nil
         countryLabel.isHidden = false
         ratingPillView.isHidden = false
     }
-
-    // MARK: - Shadow path (performance)
 
     override func layoutSubviews() {
         super.layoutSubviews()

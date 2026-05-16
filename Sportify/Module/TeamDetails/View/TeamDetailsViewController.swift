@@ -1,7 +1,6 @@
 import UIKit
 import SDWebImage
 
-// 1. Create a custom TableView class that expands automatically to match its content height
 final class SelfSizingTableView: UITableView {
     override var contentSize: CGSize {
         didSet {
@@ -18,7 +17,7 @@ final class SelfSizingTableView: UITableView {
 final class TeamDetailsViewController: UIViewController {
     @IBOutlet weak var teamName: UILabel!
     @IBOutlet private weak var logoImageView: UIImageView!
-    @IBOutlet private weak var tableView: UITableView! // Tied to SelfSizingTableView in XIB
+    @IBOutlet private weak var tableView: UITableView!
 
     private var activityIndicator: UIActivityIndicatorView?
     var presenter: TeamDetailsPresenterProtocol!
@@ -47,7 +46,6 @@ private extension TeamDetailsViewController {
         )
         tableView.separatorStyle = .none
 
-        // FIX: FORCE TableView scrolling to be false so the parent ScrollView handles everything
         tableView.isScrollEnabled = false
         tableView.alwaysBounceVertical = false
 
@@ -76,7 +74,6 @@ extension TeamDetailsViewController: TeamDetailsViewProtocol {
 
     func reloadData() {
         tableView.reloadData()
-        // Tells UIKit to update the layout bounds now that new rows are rendered
         tableView.invalidateIntrinsicContentSize()
     }
 
@@ -98,7 +95,6 @@ extension TeamDetailsViewController: TeamDetailsViewProtocol {
     }
 }
 
-// MARK: - UITableViewDataSource & Delegate
 extension TeamDetailsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
