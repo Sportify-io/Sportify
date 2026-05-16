@@ -23,11 +23,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4OI-jG-W4M">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4OI-jG-W4M">
                     <rect key="frame" x="0.0" y="96" width="414" height="732"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wh-LN-fTA">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1258.5"/>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Wh-LN-fTA">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="402.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esz-Dx-y8j">
                                     <rect key="frame" x="16" y="16" width="382" height="29"/>
@@ -51,12 +51,9 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-IL-fEE">
-                                    <rect key="frame" x="16" y="319.5" width="382" height="955"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-IL-fEE" customClass="SelfSizingTableView" customModule="Sportify" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="319.5" width="382" height="50"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="EPb-IL-fEE" secondAttribute="height" multiplier="0.4" id="1ji-CH-BhD"/>
-                                    </constraints>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -72,7 +69,7 @@
                                 <constraint firstItem="usE-Qt-bZS" firstAttribute="top" secondItem="Esz-Dx-y8j" secondAttribute="bottom" constant="8" id="n4B-na-2eP"/>
                                 <constraint firstAttribute="trailing" secondItem="EPb-IL-fEE" secondAttribute="trailing" constant="16" id="rnE-dG-NvE"/>
                                 <constraint firstAttribute="trailing" secondItem="usE-Qt-bZS" secondAttribute="trailing" constant="16" id="ulC-Cy-7no"/>
-                                <constraint firstItem="EPb-IL-fEE" firstAttribute="bottom" secondItem="4Wh-LN-fTA" secondAttribute="bottom" constant="16" id="xjz-KL-ISE"/>
+                                <constraint firstItem="EPb-IL-fEE" firstAttribute="bottom" secondItem="4Wh-LN-fTA" secondAttribute="bottom" constant="-16" id="xjz-KL-ISE"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -90,7 +87,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="AppBackground"/>
             <constraints>
-                <constraint firstItem="4OI-jG-W4M" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="SNX-rS-utn"/>
+                <constraint firstItem="4OI-jG-W4M" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="SNX-rS-utn"/>
                 <constraint firstItem="4OI-jG-W4M" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="UPO-9P-qIN"/>
                 <constraint firstItem="4OI-jG-W4M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i7q-ts-se0"/>
                 <constraint firstItem="4OI-jG-W4M" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="xhD-8p-ynu"/>
