@@ -410,16 +410,12 @@
 		3DD9DF102FACEEFB00BBA3A0 /* Sportify */ = {
 			isa = PBXGroup;
 			children = (
+				6DFDAF9F2FB8C6F1006888E2 /* Resources */,
+				6DFDAF9E2FB8C6D2006888E2 /* Application */,
 				6DAC8CEB2FAF4AC400AEB487 /* Core */,
 				6DA76E6B2FACF34B0054F9F8 /* Module */,
-				3DD9DF112FACEEFB00BBA3A0 /* AppDelegate.swift */,
-				3DD9DF132FACEEFB00BBA3A0 /* SceneDelegate.swift */,
-				3DD9DF152FACEEFB00BBA3A0 /* ViewController.swift */,
-				3DD9DF172FACEEFB00BBA3A0 /* Main.storyboard */,
-				3DD9DF1D2FACEEFD00BBA3A0 /* Assets.xcassets */,
-				3DD9DF1F2FACEEFD00BBA3A0 /* LaunchScreen.storyboard */,
-				3DD9DF222FACEEFD00BBA3A0 /* Info.plist */,
 				3DD9DF1A2FACEEFB00BBA3A0 /* Sportify.xcdatamodeld */,
+				3DD9DF222FACEEFD00BBA3A0 /* Info.plist */,
 			);
 			path = Sportify;
 			sourceTree = "<group>";
@@ -530,6 +526,7 @@
 		6DA76E6B2FACF34B0054F9F8 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				6DFDAFA02FB8C748006888E2 /* Home */,
 				3D1F4AE92FB513AD00A4A069 /* TeamDetails */,
 				3D95FD442FB1489A00E601A4 /* Favorite */,
 				6DDB0A5C2FB2407C0090D45F /* LeagueDetails */,
@@ -537,7 +534,6 @@
 				6DAC8D1E2FAFEB8B00AEB487 /* Leagues */,
 				3DD9DF442FACFE6500BBA3A0 /* Onboarding */,
 				6DA76E6C2FACF35B0054F9F8 /* Splash */,
-				3D6B30812FB3DB4E000CCFE1 /* AppTabBarController.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -800,6 +796,34 @@
 				6DDB0A672FB2427E0090D45F /* TeamCell.xib */,
 			);
 			path = Team;
+			sourceTree = "<group>";
+		};
+		6DFDAF9E2FB8C6D2006888E2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3DD9DF112FACEEFB00BBA3A0 /* AppDelegate.swift */,
+				3DD9DF132FACEEFB00BBA3A0 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		6DFDAF9F2FB8C6F1006888E2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DD9DF1D2FACEEFD00BBA3A0 /* Assets.xcassets */,
+				3DD9DF1F2FACEEFD00BBA3A0 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6DFDAFA02FB8C748006888E2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3D6B30812FB3DB4E000CCFE1 /* AppTabBarController.swift */,
+				3DD9DF152FACEEFB00BBA3A0 /* ViewController.swift */,
+				3DD9DF172FACEEFB00BBA3A0 /* Main.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		6DFEB13B2FB30C4C003C0330 /* Router */ = {
