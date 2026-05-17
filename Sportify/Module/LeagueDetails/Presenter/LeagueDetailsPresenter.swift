@@ -109,9 +109,9 @@ final class LeagueDetailsPresenter:
 
                 case .success(let response):
 
-                    self.upcomingEvents = response.result?.filter { event in
+                    self.upcomingEvents = Array((response.result?.filter { event in
                         return self.isFuture(dateString: event.eventDate ?? "2024-10-15")
-                    } ?? []
+                    } ?? []).reversed())
                     self.recentEvents = response.result?.filter { event in
                         return !self.isFuture(dateString: event.eventDate ?? "2024-10-15")
                     } ?? []

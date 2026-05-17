@@ -37,7 +37,6 @@ class FavoriteLeagueViewController: UIViewController {
             UINib(nibName: "LeagueCell", bundle: nil),
             forCellReuseIdentifier: "LeagueCell"
         )
-        tableView.backgroundColor = UIColor(named: "AppBackground")
         tableView.separatorStyle = .none
     }
 }
@@ -86,6 +85,15 @@ extension FavoriteLeagueViewController: UITableViewDataSource, UITableViewDelega
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
-        presenter.removeLeague(at: indexPath.row)
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "Delete", message: "Are you sure delete this league?", preferredStyle: .alert)
+            let retryAction = UIAlertAction(title: "Ok", style: .default) { _ in self?.presenter.removeLeague(at: indexPath.row) }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            alert.addAction(retryAction)
+            alert.addAction(cancelAction)
+            self?.present(alert, animated: true)
+        }
+        
     }
 }
