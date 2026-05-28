@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="Sportify/Assets.xcassets/ball.imageset" width="80" alt="Sportify Logo"/>
-</p>
 
 <h1 align="center">⚽ Sportify</h1>
 
